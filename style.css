@@ -1,0 +1,486 @@
+:root {
+  /* Color Palette */
+  --green-primary: #6C8479;
+  --green-secondary: #B2BAA3;
+  --cream: #F3F2E9;
+  --dark: #2C2C2C;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Cormorant Garamond', serif; /* Or Bookman Old Style if available */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--dark);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--green-secondary);
+  padding: 1rem 0;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 400;
+  font-size: 1rem;
+  position: relative;
+  /* For the hover underline animation */
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--green-primary);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  background: var(--green-secondary); /* Green background color */
+  color: var(--cream); /* Text color */
+  text-align: center; /* Center text horizontally */
+  padding: 4rem 1rem; /* Adjust padding */
+  height: 60vh; /* Set a fixed height, adjust to your preference */
+  display: flex; /* Use flexbox for vertical centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; 
+}
+
+
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(20px); /* Slight downward initial position */
+  animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in up animation */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.est-year {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+section {
+  padding: 4rem 1rem;
+}
+
+.inner-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-section,
+.services-section,
+.portfolio-section,
+.contact-section {
+  background: var(--cream);
+}
+
+.about-section h2,
+.services-section h2,
+.portfolio-section h2,
+.contact-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--green-primary);
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.service-item {
+  flex: 1 1 300px;
+  background: #fff;
+  border: 1px solid var(--green-secondary);
+  border-radius: 5px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--green-primary);
+}
+
+.service-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.service-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.portfolio-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.portfolio-item {
+  width: 250px; /* Set a fixed width for images */
+  height: 150px; /* Set a fixed height for images */
+  overflow: hidden; /* Crop overflow */
+  border-radius: 5px; /* Optional: rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item img {
+  width: 100%; /* Make the image take up the full width of the container */
+  height: 100%; /* Ensure it fills the container */
+  object-fit: cover; /* Crop the image to fit perfectly */
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--green-primary);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--green-secondary);
+  border-radius: 5px;
+  font-family: var(--font-body);
+}
+
+.contact-form button {
+  background: var(--green-primary);
+  color: var(--cream);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--green-secondary);
+}
+
+.site-footer {
+  background: var(--green-primary);
+  color: var(--cream);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+.logo  {
+  width: 150px;
+  height: auto;
+}
+.portfolio-section p {
+  text-align: center;
+}
+.contact-section p {
+  text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Lightbox overlay (hidden by default) */
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Static dark background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox.active {
+  display: flex; /* Show the lightbox when active */
+}
+
+/* Lightbox content */
+.lightbox-content img {
+  max-width: 70%; /* Ensure image doesn't overflow horizontally */
+  max-height: 70%; /* Ensure image doesn't overflow vertically */
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Optional shadow */
+  transform: scale(0.8); /* Start smaller */
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 0.6s ease forwards; /* Apply fade-in animation */
+}
+
+.lightbox.closing .lightbox-content img {
+  animation: fadeOut 0.4s ease forwards; /* Apply fade-out animation */
+}
+.lightbox-content {
+  position: relative; /* Container for the image */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  max-width: 90%;
+  max-height: 90%;
+}
+/* Keyframes for fading in and out the image */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8); /* Slightly smaller */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Full size */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1); /* Full size */
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8); /* Shrinks back down */
+  }
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* Gallery Header */
+.gallery-header {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Full Window Gallery Grid */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 10px; /* Space between images */
+  width: 100%; /* Full window width */
+  height: 100%; /* Full window height */
+  padding: 0;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%; /* Fill the container horizontally */
+  height: 100%; /* Fill vertically */
+  object-fit: cover; /* Maintain aspect ratio and fill the box */
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Asymmetrical Layout */
+.gallery-item.wide {
+  grid-column: span 2; /* Takes up 2 columns */
+}
+
+.gallery-item.tall {
+  grid-row: span 2; /* Takes up 2 rows */
+}
+
+/* Responsive Layout */
+@media (max-width: 1000px) {
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+/* Fullscreen Hero Section */
+.gallery-hero {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  background-image: url('HY405398.jpg'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff; /* White text */
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 2rem;
+}
+
+/* Overlay Effect */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+  z-index: 1; /* Place it behind text */
+}
+
+/* Centered Content */
+.gallery-content {
+  position: relative;
+  z-index: 2; /* Above the overlay */
+}
+
+.gallery-title {
+  font-size: 4rem; /* Large and elegant */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-date {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.view-gallery-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.view-gallery-btn:hover {
+  background: #fff;
+  color: #333;
+}
