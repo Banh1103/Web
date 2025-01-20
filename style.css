@@ -420,7 +420,7 @@ html {
   }
 }
 
-@media (max-width: 280px) {
+@media (max-width: 380px) {
   .image-gallery {
     grid-template-columns: 1fr; /* 1 column on mobile */
   }
