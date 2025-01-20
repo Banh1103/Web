@@ -378,11 +378,13 @@ html {
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 10px; /* Space between images */
+  gap: 10px; 
+  grid-auto-rows: 1fr;/* Space between images */
   width: 100%; /* Full window width */
   height: 100%; /* Full window height */
   padding: 0;
   margin: 0 auto;
+  grid-auto-flow: dense;
 }
 
 .gallery-item {
@@ -420,11 +422,12 @@ html {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 280px) {
   .image-gallery {
     grid-template-columns: 1fr; /* 1 column on mobile */
   }
 }
+
 
 /* Fullscreen Hero Section */
 .gallery-hero {
