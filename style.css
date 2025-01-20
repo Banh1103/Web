@@ -388,6 +388,9 @@ html {
 .gallery-item {
   position: relative;
   overflow: hidden;
+  width: 100%; /* Default to full width */
+  height: 100%; /* Let the height adapt */
+  aspect-ratio: 1 / 1; /* Set a square aspect ratio for normal items */
 }
 
 .gallery-item img {
@@ -397,38 +400,39 @@ html {
   transition: transform 0.3s ease-in-out;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-
 /* Asymmetrical Layout */
 .gallery-item.wide {
   grid-column: span 2; /* Takes up 2 columns */
+  aspect-ratio: 2 / 1; /* Wider aspect ratio */
 }
 
 .gallery-item.tall {
   grid-row: span 2; /* Takes up 2 rows */
+  aspect-ratio: 1 / 2; /* Taller aspect ratio */
 }
 
+
+
 /* Responsive Layout */
-@media (max-width: 1000px) {
+@media (max-width: 500px) {
   .image-gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 280px) {
   .image-gallery {
     grid-template-columns: 1fr; /* 1 column on mobile */
   }
 }
+
 /* Fullscreen Hero Section */
 .gallery-hero {
   position: relative;
   height: 100vh; /* Full screen height */
-  background-image: url('HY405398.jpg'); /* Replace with your image path */
-  background-size: cover; /* Cover the entire section */
-  background-position: center; /* Center the image */
+  background-image: url('gallery 1/HY405398.jpg'); /* Replace with your image path */
+  background-size: cover ; /* Cover the entire section */
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -461,8 +465,8 @@ html {
   margin-bottom: 0.5rem;
 }
 
-.gallery-date {
-  font-size: 1.25rem;
+.gallery-venue {
+  font-size: 2rem;
   font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
@@ -484,3 +488,10 @@ html {
   background: #fff;
   color: #333;
 }
+.gallery-content{
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Slight downward initial position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in up animation */
+  }
