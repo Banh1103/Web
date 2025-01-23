@@ -195,26 +195,39 @@ section {
   margin-top: 2rem;
 }
 
+/* Portfolio Item */
 .portfolio-item {
-  width: 250px; /* Set a fixed width for images */
-  height: 150px; /* Set a fixed height for images */
-  overflow: hidden; /* Crop overflow */
-  border-radius: 5px; /* Optional: rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px; /* Ensure fixed size for consistency */
+  text-align: center; /* Center-align content */
+  margin: 1rem; /* Add spacing between items */
+  overflow: hidden; /* Prevent image overflow */
 }
 
+/* Image inside portfolio */
 .portfolio-item img {
-  width: 100%; /* Make the image take up the full width of the container */
-  height: 100%; /* Ensure it fills the container */
-  object-fit: cover; /* Crop the image to fit perfectly */
+  width: 300px; /* Ensure image fills the container */
+  height: 150px; /* Maintain aspect ratio */
+  border-radius: 5px; /* Add rounded corners */
+  object-fit: cover; /* Ensure the image crops nicely */
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.portfolio-item:hover {
+/* Hover effect on images */
+.portfolio-item:hover img {
   transform: scale(1.05); /* Slight zoom effect */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
 }
 
+/* Caption styling */
+.portfolio-caption {
+  margin-top: 0.5rem; /* Add spacing between the image and the caption */
+  font-family: var(--font-body); /* Use the specified font */
+  font-size: 1.1rem; /* Adjust text size */
+  color: var(--dark); /* Match theme text color */
+  line-height: 1.5; /* Improve readability */
+  font-weight: 1000;
+}
 
 .contact-form {
   max-width: 600px;
@@ -286,6 +299,10 @@ section {
 }
 .portfolio-section p {
   text-align: center;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--dark);
+    margin-top: 0.5rem;
 }
 .contact-section p {
   text-align: center;
@@ -498,3 +515,18 @@ html {
     transform: translateY(20px); /* Slight downward initial position */
     animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in up animation */
   }
+  .gallery-hero1 {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    background-image: url('gallery 2/HY401779.jpg'); /* Replace with your image path */
+    background-size: cover ; /* Cover the entire section */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* White text */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2rem;
+  }
+  
